@@ -1,0 +1,92 @@
+$menu-width: 60px;
+$menu-open-width: $menu-width * 4;
+
+$body-background: #212121;
+$body-font-stack: Tahoma, Geneva, sans-serif;
+
+$menu-background: #2d3137;
+$menu-color: #e8f5ff;
+$menu-item-border: #2196F3;
+
+* {box-sizing: border-box;}
+
+html {font-size: 16px;}
+
+body {
+  background: $body-background;
+  font-family: $body-font-stack;
+  font-size: 1rem;
+}
+
+.main-menu {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: $menu-width;
+  height: 100%;
+  padding: 2px;
+  background: $menu-background;
+  overflow: hidden;
+  transition: all .2s;
+  
+  &:hover {
+    width: $menu-open-width;
+  }
+  
+  a {
+    color: $menu-color;
+    border-left: 2px solid transparent;
+    display: block;
+    width: $menu-open-width;
+    position: relative;
+    opacity: 0.4;
+    text-decoration: none;
+    transition: all .3s;
+    
+    &:hover {
+      opacity: 1;
+      background: #393f45;
+      border-left-color: $menu-item-border;
+    }
+  }
+}
+
+.menu__content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu__icon {
+  left: 0;
+  width: 60px;
+  height: 40px;
+  background-image: url("https://www.bungie.net/img/theme/bungienet/icons/sprite_left_nav_v2.png");
+  background-repeat: no-repeat;
+  
+  &--news {
+    background-position: 0 0;
+  }
+  
+  &--legend {
+    background-position: 0 -82px;
+  }
+  
+  &--tower {
+    background-position: 0 -123px;
+  }
+  
+  &--grimoire {
+    background-position: 0 -164px;
+  }
+  
+  &--clans {
+    background-position: 0 -205px;
+  }
+  
+  &--forums {
+    background-position: 0 -287px;
+  }
+}
